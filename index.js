@@ -1,6 +1,6 @@
-      // Calendário de estudos mensal (9 ANO) //
-    // ESTUDO VOLTADO Á PREPARAÇÃO PARA O ENSINO MÉDIO //
-  // ÁREA DAS EXATAS - Versão Final Ajustada //
+  // Calendário de estudos mensal (9 ANO) //
+ // ESTUDO VOLTADO Á PREPARAÇÃO PARA O ENSINO MÉDIO //
+// ÁREA DAS EXATAS - Versão Final Ajustada //
 
 let dezembro1 = true
 let dezembro2 = true
