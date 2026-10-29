@@ -1,5 +1,7 @@
-  // Calendário de estudos mensal (9 ANO) //
- // ESTUDO VOLTADO Á PREPARAÇÃO PARA O ENSINO MÉDIO //
+const prompt = require("prompt-sync")()
+
+// Calendário de estudos mensal (9 ANO) //
+// ESTUDO VOLTADO Á PREPARAÇÃO PARA O ENSINO MÉDIO //
 // ÁREA DAS EXATAS - Versão Final Ajustada //
 
 let dezembro1 = true
@@ -19,11 +21,23 @@ let dezembro14 = true
 let dezembro15 = true
 
 // ================================================================================= //
-// DEFINA O DIA EM QUE VOCÊ DESEJA CONSULTAR 
-let diaAtual = 15
+// DEFINA O DIA EM QUE VOCÊ DESEJA CONSULTAR USANDO O PROMPT DO TERMINAL
+let entradaDia = prompt("Digite o dia que deseja consultar (1 a 15): ")
+let diaAtual = Number(entradaDia)
+// ================================================================================= //
+
+// 1. UTILIZANDO WHILE PARA VERIFICAÇÃO GERAL DOS DIAS ANTERIORES
+let contadorDias = 1
+while (contadorDias <= diaAtual) {
+    if (contadorDias === diaAtual) {
+        console.log(`Chegou ao dia atual da consulta: ${contadorDias}`)
+    }
+    contadorDias++
+}
+
 // ================================================================================= //
 // EXIBIÇÃO DA TAREFA DO DIA SELECIONADO 
-// AS CONDICIONAIS APRESENTARÃO A SITUAÇÃO DOS ESTUDOS,SE REALIZADOS OU NÃO
+// AS CONDICIONAIS APRESENTARÃO A SITUAÇÃO DOS ESTUDOS, SE REALIZADOS OU NÃO
 
 switch (diaAtual) {
     case 1:
@@ -136,83 +150,131 @@ switch (diaAtual) {
         break
 }
 
-// ================================================================================= //
-// 2. CÁLCULO FINAL PROGRESSIVO DO DIA SELECIONADO (DO DIA 1 AO 15)
-// ================================================================================= //
-// AS CONDICIONAIS IRÃO MOSTRAR A CONCLUSÃO DOS ESTUDOS PERANTE DETERMINADAS ÁREAS
-// CONDICIONAIS AVALIAM SOMENTE NÚMEROS IMPARES,SENDO VÁLIDO PRIMORDIALMENTE O CONTEÚDO AO INVÉS DA REVISÃO
+let desejaFechamento = prompt("Deseja ver o fechamento daquele conteúdo? (s/n): ")
 
-switch (diaAtual) {
-    case 1:
-        if (dezembro1 && dezembro2) {
-            console.log("Parabéns! conteúdo de números reais finalizado")
-        } else {
-            console.log("Estudos de números reais incompleto")
-        }
-        break
-    case 3:
-        if (dezembro3 && dezembro4) {
-            console.log("Parabéns! conteúdo de radiciação e potenciação finalizado")
-        } else {
-            console.log("Estudos de radiciação e potenciação incompleto")
-        }
-        break
-    case 5:
-        if (dezembro5 && dezembro6) {
-            console.log("Parabéns! conteúdo de álgebra finalizado")
-        } else {
-            console.log("Estudos de álgebra incompleto")
-        }
-        break
-    case 7:
-        if (dezembro7 && dezembro8) {
-            console.log("Parabéns! conteúdo de equações do segundo grau finalizado")
-        } else {
-            console.log("Estudos de equações do segundo grau incompleto")
-        }
-        break
-    case 9:
-        if (dezembro9 && dezembro10) {
-            console.log("Parabéns! conteúdo de funções finalizado")
-        } else {
-            console.log("Estudos de funções incompleto")
-        }
-        break
-    case 11:
-        if (dezembro11 && dezembro12) {
-            console.log("Parabéns! conteúdo de trigonometria finalizado")
-        } else {
-            console.log("Estudos de trigonometria incompleto")
-        }
-        break
-    case 13:
-        if (dezembro13 && dezembro14) {
-            console.log("Parabéns! conteúdo de estatística finalizado")
-        } else {
-            console.log("Estudos de estatística incompleto")
-        }
-        break
-    case 15:
-        if (dezembro15) {
-            console.log("Parabéns! conteúdo geral de geometrias finalizado")
-        } else {
-            console.log("Estudos de geometrias incompleto")
-        }
-        break
-    default:
-        console.log("Nenhuma validação de fechamento para o dia selecionado")
-        break
+if (desejaFechamento === "s") {
+    // ================================================================================= //
+    // 2. CÁLCULO FINAL PROGRESSIVO DO DIA SELECIONADO (DO DIA 1 AO 15)
+    // ================================================================================= //
+    // AS CONDICIONAIS IRÃO MOSTRAR A CONCLUSÃO DOS ESTUDOS PERANTE DETERMINADAS ÁREAS
+    // CONDICIONAIS AVISARAM SE O CONTÉUDO DESTINADO FOI DEVIDAMENTE CUMPRIDO
+
+    switch (diaAtual) {
+        case 1:
+        case 2:
+            let fecharReais = prompt("Deseja ver o fechamento e a revisão do tema Números Reais? (s/n): ")
+            if (fecharReais === "s") {
+                if (dezembro1 && dezembro2) {
+                    console.log("Parabéns! conteúdo de números reais e revisão finalizados")
+                } else {
+                    console.log("Estudos de números reais ou revisão incompletos")
+                }
+            }
+            break
+        case 3:
+        case 4:
+            let fecharPot = prompt("Deseja ver o fechamento e a revisão do tema Potenciação e Radiciação? (s/n): ")
+            if (fecharPot === "s") {
+                if (dezembro3 && dezembro4) {
+                    console.log("Parabéns! conteúdo de radiciação e potenciação e revisão finalizados")
+                } else {
+                    console.log("Estudos de radiciação e potenciação ou revisão incompletos")
+                }
+            }
+            break
+        case 5:
+        case 6:
+            let fecharAlg = prompt("Deseja ver o fechamento e a revisão do tema Álgebra? (s/n): ")
+            if (fecharAlg === "s") {
+                if (dezembro5 && dezembro6) {
+                    console.log("Parabéns! conteúdo de álgebra e revisão finalizados")
+                } else {
+                    console.log("Estudos de álgebra ou revisão incompletos")
+                }
+            }
+            break
+        case 7:
+        case 8:
+            let fecharEq = prompt("Deseja ver o fechamento e a revisão do tema Funções do Segundo Grau? (s/n): ")
+            if (fecharEq === "s") {
+                if (dezembro7 && dezembro8) {
+                    console.log("Parabéns! conteúdo de equações do segundo grau e revisão finalizados")
+                } else {
+                    console.log("Estudos de equações do segundo grau ou revisão incompletos")
+                }
+            }
+            break
+        case 9:
+        case 10:
+            let fecharFunc = prompt("Deseja ver o fechamento e a revisão do tema Introdução das Funções? (s/n): ")
+            if (fecharFunc === "s") {
+                if (dezembro9 && dezembro10) {
+                    console.log("Parabéns! conteúdo de funções e revisão finalizados")
+                } else {
+                    console.log("Estudos de funções ou revisão incompletos")
+                }
+            }
+            break
+        case 11:
+        case 12:
+            let fecharTrig = prompt("Deseja ver o fechamento e a revisão do tema Trigonometria? (s/n): ")
+            if (fecharTrig === "s") {
+                if (dezembro11 && dezembro12) {
+                    console.log("Parabéns! conteúdo de trigonometria e revisão finalizados")
+                } else {
+                    console.log("Estudos de trigonometria ou revisão incompletos")
+                }
+            }
+            break
+        case 13:
+        case 14:
+            let fecharEst = prompt("Deseja ver o fechamento e a revisão do tema Estatística? (s/n): ")
+            if (fecharEst === "s") {
+                if (dezembro13 && dezembro14) {
+                    console.log("Parabéns! conteúdo de estatística e revisão finalizados")
+                } else {
+                    console.log("Estudos de estatística ou revisão incompletos")
+                }
+            }
+            break
+        case 15:
+            let fecharGeo = prompt("Deseja ver o fechamento do tema Geometrias? (s/n): ")
+            if (fecharGeo === "s") {
+                if (dezembro15) {
+                    console.log("Parabéns! conteúdo geral de geometrias finalizado")
+                } else {
+                    console.log("Estudos de geometrias incompleto")
+                }
+            }
+            break
+        default:
+            console.log("Nenhuma validação de fechamento para o dia selecionado")
+            break
+    }
 }
 
-switch (dezembro1 && dezembro2 && dezembro3 && dezembro4 && 
-dezembro5 && dezembro6 && dezembro7 && dezembro8 && 
-dezembro9 && dezembro10 && dezembro11 && dezembro12 && 
-dezembro13 && dezembro14 && dezembro15) {
-    case true:
-console.log("Parabens! conteúdos de revisão do 9 ano concluídos com sucesso")
-        break 
-    default:
-console.log("Estudos incompletos, mais atenção e responsabilidade nos próximos afazeres escolares!")
-        break
+let desejaResumo = prompt("Deseja ver o resumo final? (s/n): ")
+
+if (desejaResumo === "s") {
+    let statusValidacao = false
+    let tentativas = 1
+
+    do {
+        if (dezembro1 && dezembro2 && dezembro3 && dezembro4 && 
+        dezembro5 && dezembro6 && dezembro7 && dezembro8 && 
+        dezembro9 && dezembro10 && dezembro11 && dezembro12 && 
+        dezembro13 && dezembro14 && dezembro15) {
+            statusValidacao = true
+        }
+        tentativas++
+    } while (tentativas <= 1)
+
+    switch (statusValidacao) {
+        case true:
+            console.log("Parabens! conteúdos de revisão do 9 ano concluídos com sucesso")
+            break 
+        default:
+            console.log("Estudos incompletos, mais atenção e responsabilidade nos próximos afazeres escolares!")
+            break
+    }
 }
-            
