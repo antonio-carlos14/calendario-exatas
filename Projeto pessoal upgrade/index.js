@@ -3,22 +3,24 @@ const prompt = require("prompt-sync")()
 // Calendário de estudos mensal (9 ANO) //
 // ESTUDO VOLTADO Á PREPARAÇÃO PARA O ENSINO MÉDIO //
 // ÁREA DAS EXATAS - Versão Final Ajustada //
+// ==================================================== //
 
-let dezembro1 = true
-let dezembro2 = true
-let dezembro3 = true
-let dezembro4 = true
-let dezembro5 = true
-let dezembro6 = true
-let dezembro7 = true
-let dezembro8 = true
-let dezembro9 = true
-let dezembro10 = true
-let dezembro11 = true
-let dezembro12 = true
-let dezembro13 = true
-let dezembro14 = true
-let dezembro15 = true
+
+let dezembro1 = (prompt("Realizou a programção prevista?: "))
+let dezembro2 = (prompt("Realizou a programção prevista?: "))
+let dezembro3 = (prompt("Realizou a programção prevista?: "))
+let dezembro4 = (prompt("Realizou a programção prevista?: "))
+let dezembro5 = (prompt("Realizou a programção prevista?: "))
+let dezembro6 = (prompt("Realizou a programção prevista?: "))
+let dezembro7 = (prompt("Realizou a programção prevista?: "))
+let dezembro8 = (prompt("Realizou a programção prevista?: "))
+let dezembro9 = (prompt("Realizou a programção prevista?: "))
+let dezembro10 = (prompt("Realizou a programção prevista?: "))
+let dezembro11 = (prompt("Realizou a programção prevista?: "))
+let dezembro12 = (prompt("Realizou a programção prevista?: "))
+let dezembro13 = (prompt("Realizou a programção prevista?: "))
+let dezembro14 = (prompt("Realizou a programção prevista?: "))
+let dezembro15 = (prompt("Realizou a programção prevista?: "))
 
 // ================================================================================= //
 // DEFINA O DIA EM QUE VOCÊ DESEJA CONSULTAR USANDO O PROMPT DO TERMINAL
@@ -26,7 +28,7 @@ let entradaDia = prompt("Digite o dia que deseja consultar (1 a 15): ")
 let diaAtual = Number(entradaDia)
 // ================================================================================= //
 
-// 1. UTILIZANDO WHILE PARA VERIFICAÇÃO GERAL DOS DIAS ANTERIORES
+// 1.VERIFICAÇÃO GERAL DOS DIAS ANTERIORES,VERACIDADE
 let contadorDias = 1
 while (contadorDias <= diaAtual) {
     if (contadorDias === diaAtual) {
